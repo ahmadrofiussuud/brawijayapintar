@@ -1039,7 +1039,8 @@ ul {
     font-weight: 900;
     line-height: 1;
     text-transform: uppercase;
-    color: #1a1a1a;
+    color: var(--accent);
+    /* navy gelap */
     letter-spacing: -2.5px;
     margin-bottom: 64px;
     max-width: 800px;
@@ -1048,34 +1049,84 @@ ul {
 .proker-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
     position: relative;
     z-index: 2;
+    margin-bottom: 40px;
 }
 
-.proker-item {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.proker-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 32px;
+    border: 1px solid rgba(0, 45, 156, 0.08);
+    /* Halus */
+    box-shadow: 0 8px 24px rgba(0, 45, 156, 0.04);
+    transition: var(--transition);
 }
 
-.proker-name {
-    font-size: 1.5rem;
+.proker-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 45, 156, 0.08);
+    transform: translateY(-4px);
+    border-color: rgba(15, 98, 254, 0.2);
+}
+
+.proker-card-title {
+    font-size: 1.35rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: var(--accent);
+    margin-bottom: 24px;
     letter-spacing: -0.5px;
 }
 
-.proker-details {
-    list-style-type: decimal;
-    padding-left: 20px;
-    font-size: 1.15rem;
-    color: #333;
-    line-height: 1.6;
+.proker-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.proker-details li {
-    margin-bottom: 6px;
+.proker-budget-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.proker-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    min-width: 120px;
+    background-color: var(--primary-light);
+    color: var(--accent);
+}
+
+.proker-budget-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    flex: 1;
+    margin-top: 4px;
+    /* Align text visual center with badge */
+}
+
+.proker-card-divider {
+    height: 1px;
+    background-color: var(--border);
+    width: 100%;
+}
+
+.pemasukan-actions {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
 }
 
 .pemasukan-image-wrapper {
@@ -1121,6 +1172,22 @@ ul {
 
     .pemasukan-title {
         margin-bottom: 40px;
+        font-size: clamp(2.5rem, 8vw, 3rem);
+        /* Smaller on mobile */
+    }
+
+    .proker-budget-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .proker-badge {
+        min-width: auto;
+        display: inline-block;
+    }
+
+    .pemasukan-actions {
+        flex-direction: column;
     }
 
     .pemasukan-pagination {

@@ -14,14 +14,26 @@ function RancanganPemasukan() {
 
                     <div className="proker-list">
                         {rancanganPemasukan.map((proker, index) => (
-                            <div key={index} className="proker-item">
-                                <h3 className="proker-name">{proker.nama}</h3>
-                                <ol className="proker-details">
-                                    <li>Pengeluaran = {proker.pengeluaran}</li>
-                                    <li>Pemasukan = {proker.pemasukan}</li>
-                                </ol>
+                            <div key={index} className="proker-card">
+                                <h3 className="proker-card-title">{proker.nama}</h3>
+                                <div className="proker-card-body">
+                                    <div className="proker-budget-row">
+                                        <span className="proker-badge pengeluaran">Pengeluaran</span>
+                                        <span className="proker-budget-text">{proker.pengeluaran}</span>
+                                    </div>
+                                    <div className="proker-card-divider"></div>
+                                    <div className="proker-budget-row">
+                                        <span className="proker-badge pemasukan">Pemasukan</span>
+                                        <span className="proker-budget-text">{proker.pemasukan}</span>
+                                    </div>
+                                </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="pemasukan-actions">
+                        <a href="#partnership" className="btn btn-primary btn-sm">Ajukan Partnership</a>
+                        <a href="#proposal" className="btn btn-secondary btn-sm" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>Lihat Proposal</a>
                     </div>
 
                     <div className="pemasukan-pagination left">03/10</div>
