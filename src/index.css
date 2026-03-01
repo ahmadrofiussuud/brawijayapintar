@@ -669,3 +669,462 @@ ul {
         font-size: 2rem;
     }
 }
+
+/* --- Struktur Kepengurusan Section --- */
+.struktur-section {
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+    overflow: hidden;
+    color: white;
+    /* Base text color for dark overlay */
+}
+
+/* Background Image Placeholder with Blur */
+.struktur-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    transform: scale(1.05);
+    /* hide blurred edges */
+    z-index: 1;
+}
+
+/* Gradient Overlay: Navy transparent to Blue transparent */
+.struktur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 45, 156, 0.85) 0%, rgba(15, 98, 254, 0.65) 100%);
+    z-index: 2;
+}
+
+/* Subtle Grain / Noise Overlay */
+.struktur-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.12;
+    mix-blend-mode: overlay;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.struktur-container {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+}
+
+.struktur-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFD700;
+    /* Gold */
+    margin-bottom: 48px;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.struktur-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    /* Translucent white/light blue */
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 16px 48px rgba(0, 45, 156, 0.15);
+    backdrop-filter: blur(16px);
+    color: var(--accent);
+}
+
+.struktur-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.struktur-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.struktur-category-badge {
+    align-self: flex-start;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(15, 98, 254, 0.2);
+}
+
+.struktur-sublist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 32px;
+    list-style: none;
+}
+
+.struktur-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.05rem;
+    /* 16px - 18px ish */
+    line-height: 1.6;
+}
+
+.struktur-header-btn {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    cursor: default;
+    padding: 0;
+}
+
+.struktur-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+}
+
+.struktur-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.struktur-names-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+}
+
+.struktur-chip {
+    background: rgba(0, 45, 156, 0.05);
+    border: 1px solid rgba(0, 45, 156, 0.1);
+    color: var(--accent);
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.struktur-chevron {
+    display: none;
+    /* Hidden on desktop */
+}
+
+@media (min-width: 769px) {
+    .struktur-header-btn {
+        pointer-events: none;
+    }
+
+    .struktur-header-btn:focus-visible {
+        outline: none;
+    }
+}
+
+.struktur-desc-wrapper {
+    display: block;
+    /* Visible by default on desktop */
+    padding-left: 20px;
+}
+
+.struktur-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #FFD700;
+    /* Gold bullet */
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 10px;
+    /* align with first line of text */
+}
+
+.struktur-role {
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.2;
+}
+
+.struktur-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 4px 0 0 0;
+}
+
+/* Pagination Decorators */
+.struktur-pagination {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #FFD700;
+    z-index: 4;
+    letter-spacing: 1px;
+}
+
+.struktur-pagination.left {
+    left: 40px;
+}
+
+.struktur-pagination.right {
+    right: 40px;
+}
+
+/* Animation Classes */
+.opacity-0 {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .struktur-sublist {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .struktur-content {
+        padding: 24px;
+    }
+
+    .struktur-item {
+        font-size: 0.95rem;
+    }
+
+    .struktur-header-btn {
+        cursor: pointer;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+        align-items: center;
+    }
+
+    .struktur-chevron {
+        display: block;
+        color: var(--accent);
+        font-size: 0.8rem;
+        transition: transform 0.3s;
+        margin-left: 12px;
+    }
+
+    .struktur-item.expanded .struktur-chevron {
+        transform: rotate(180deg);
+    }
+
+    .struktur-desc-wrapper {
+        display: none;
+        /* Hide by default on mobile */
+    }
+
+    .struktur-item.expanded .struktur-desc-wrapper {
+        display: block;
+        padding: 12px 0 12px 20px;
+        animation: fadeInDesc 0.3s ease;
+    }
+
+    .struktur-pagination {
+        bottom: 20px;
+    }
+
+    .struktur-pagination.left {
+        left: 20px;
+    }
+
+    .struktur-pagination.right {
+        right: 20px;
+    }
+}
+
+@keyframes fadeInDesc {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Rancangan Pemasukan Section --- */
+.pemasukan-section {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-page);
+    overflow: hidden;
+}
+
+.pemasukan-grid {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    min-height: 80vh;
+}
+
+.pemasukan-content {
+    background-color: #F8F5E6;
+    /* Off-white/Cream */
+    padding: 80px 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-main);
+}
+
+/* Cream grain overlay */
+.pemasukan-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.pemasukan-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    letter-spacing: -2.5px;
+    margin-bottom: 64px;
+    max-width: 800px;
+}
+
+.proker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.proker-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.proker-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.proker-details {
+    list-style-type: decimal;
+    padding-left: 20px;
+    font-size: 1.15rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.proker-details li {
+    margin-bottom: 6px;
+}
+
+.pemasukan-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.pemasukan-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pemasukan-pagination {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .pemasukan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pemasukan-image-wrapper {
+        min-height: 350px;
+        order: -1;
+        /* Move image above content on mobile */
+    }
+
+    .pemasukan-content {
+        padding: 60px 5%;
+    }
+
+    .pemasukan-title {
+        margin-bottom: 40px;
+    }
+
+    .pemasukan-pagination {
+        display: none;
+        /* Hide pagination rotation on small screens */
+    }
+}

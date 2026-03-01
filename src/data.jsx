@@ -61,3 +61,89 @@ export const faqs = [
         answer: "Pilih CTA 'Gabung Ekosistem' untuk mengisi kuesioner profil awal (Formulir Pendaftaran). Admin kami akan merespons dalam 1-2 hari kerja."
     }
 ];
+
+export const strukturKepengurusan = [
+    {
+        kategori: "Inti",
+        items: [
+            {
+                role: "Dewan Pengawas",
+                names: ["Muhammad Ghazian"],
+                description: ""
+            },
+            {
+                role: "Ketua Umum",
+                names: ["Nurun Nisail"],
+                description: ""
+            },
+            {
+                role: "Sekretaris",
+                names: ["Elgiva Syam", "Ari Achya"],
+                description: ""
+            },
+            {
+                role: "Bendahara & Divisi Keuangan",
+                names: ["Nabila C", "Jasmine F"],
+                description: ""
+            }
+        ]
+    },
+    {
+        kategori: "Manajerial & Relasi",
+        items: [
+            {
+                role: "Fundraising and Partnership",
+                names: ["Abelina Abtari", "Avisena Putra", "Haris Vikriansah"],
+                description: "Bertanggung jawab dalam pencarian pendanaan, sponsorship, serta menjalin dan menjaga kerja sama dengan pihak eksternal"
+            },
+            {
+                role: "Strategic Planning & Research",
+                names: ["Muhamad Fuad", "Muhammad Fathir", "Rafandra Patria", "Aulia Sukma"],
+                description: "Pengembangan internal organisasi dan perencanaan strategi. Riset tren, evaluasi program tahunan, penyusunan roadmap."
+            },
+            {
+                role: "Public Relation",
+                names: ["Ilyas Nur", "Syifa Aprilia", "Tiara Meisya"],
+                description: "Membangun dan menjaga hubungan UKM dengan pihak luar, menjalin relasi dengan lembaga beasiswa dan organisasi lain"
+            }
+        ]
+    },
+    {
+        kategori: "Operasional & Program",
+        items: [
+            {
+                role: "Kominfo",
+                names: ["Najiha Husnah", "William Samuel", "Anisa Nurul", "Muhammad Fahri"],
+                description: "Mengelola media sosial, publikasi, dan penyebaran informasi beasiswa."
+            },
+            {
+                role: "HRD (Penyeleksi)",
+                names: ["Muhammad Ahmad", "Amelia Farras", "Rifandi"],
+                description: "Training internal pengurus, evaluasi kinerja, internal bonding & culture, SOP & sistem kerja"
+            },
+            {
+                role: "Mentoring & Scholarship Development",
+                names: ["Muhammad Fatih", "Nalita Azzuhra", "Anisa Alya", "Nabila Farah", "Fera Anggun"],
+                description: "Pengelolaan sistem pendampingan mentor dan calon penerima beasiswa."
+            },
+            {
+                role: "Academic & Scholarship Development",
+                names: ["Fathur Rizki", "Muhammad Rafi", "Muhammad Hanif", "Fira Salimah"],
+                description: "Pelatihan teknis workshop essay, CV, interview, serta pengembangan softskill/hardskill."
+            }
+        ]
+    }
+];
+
+export const rancanganPemasukan = [
+    {
+        nama: "Proker 1",
+        pengeluaran: "Operasional, audio system, tenant, dekorasi, konsumsi, pemateri (total 15 jt)",
+        pemasukan: "Dana rektorat, sponsorship, danusan, tiket masuk Workshop"
+    },
+    {
+        nama: "Proker 2",
+        pengeluaran: "Konsumsi dan dana pengajar",
+        pemasukan: "Dana rektorat & sponsorship"
+    }
+];
