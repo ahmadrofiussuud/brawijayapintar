@@ -15,16 +15,21 @@ function RancanganPemasukan() {
                     <div className="proker-list">
                         {rancanganPemasukan.map((proker, index) => (
                             <div key={index} className="proker-card">
-                                <h3 className="proker-card-title">{proker.nama}</h3>
+                                <h3 className="proker-card-title">{proker.title}</h3>
                                 <div className="proker-card-body">
                                     <div className="proker-budget-row">
                                         <span className="proker-badge pengeluaran">Pengeluaran</span>
-                                        <span className="proker-budget-text">{proker.pengeluaran}</span>
+                                        <span className="proker-budget-text">
+                                            {proker.pengeluaran.join(', ')}
+                                            {proker.perkiraan_total && ` (Total ${proker.perkiraan_total})`}
+                                        </span>
                                     </div>
                                     <div className="proker-card-divider"></div>
                                     <div className="proker-budget-row">
                                         <span className="proker-badge pemasukan">Pemasukan</span>
-                                        <span className="proker-budget-text">{proker.pemasukan}</span>
+                                        <span className="proker-budget-text">
+                                            {proker.pemasukan.join(', ')}
+                                        </span>
                                     </div>
                                 </div>
                             </div>

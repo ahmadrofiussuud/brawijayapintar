@@ -38,10 +38,11 @@ function Navbar() {
                 </button>
 
                 <ul className={`nav-links ${menuOpen ? 'active' : ''}`} id="nav-menu">
-                    <li><a href="#tentang" onClick={closeMenu}>Tentang</a></li>
-                    <li><a href="#program" onClick={closeMenu}>Program</a></li>
+                    <li><a href="#" onClick={closeMenu}>Beranda</a></li>
+                    <li><a href="#budaya" onClick={closeMenu}>Profil & Budaya</a></li>
+                    <li><a href="#program" onClick={closeMenu}>Program Kerja</a></li>
                     <li><a href="#mentoring" onClick={closeMenu}>Mentoring</a></li>
-                    <li><a href="#roadmap" onClick={closeMenu}>Roadmap</a></li>
+                    <li><a href="#roadmap" onClick={closeMenu}>Timeline</a></li>
                     <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
                 </ul>
 
